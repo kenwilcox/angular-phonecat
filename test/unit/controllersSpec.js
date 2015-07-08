@@ -15,4 +15,16 @@ describe('PhoneCat controllers', function() {
     }));
 
   });
+  
+    describe('PhoneListCtrl', function(){
+
+    beforeEach(module('phonecatApp'));
+
+    it('should create a name of World', inject(function($controller) {
+      var scope = {},
+          ctrl = $controller('PhoneListCtrl', {$scope:scope});
+      expect(scope.name).toBe('World');
+    }));
+
+  });
 });
