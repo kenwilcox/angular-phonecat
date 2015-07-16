@@ -93,4 +93,18 @@ describe('PhoneCat App', function() {
       expect(element(by.binding('phone.name')).getText()).toBe('Nexus S');
     });
   });
+  
+  describe('Phone detail view', function() {
+
+    beforeEach(function() {
+      browser.get('app/index.html#/phones/nexus-s');
+    });
+
+
+    it('should display nexus-s page with four image thumb nails', function() {
+      var list = element.all(by.css('.phone-thumbs li'));
+      expect(list.count()).toBe(4);
+    });
+  });
+  
 });
